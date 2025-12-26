@@ -1,0 +1,124 @@
+POST http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+    "name": "Hemanth",
+    "email": "new@gmail.com",
+    "password": "123",
+    "age": 35,
+    "gender": "Male",
+    "diabetesType": "Type 2",
+    "sugarLevels": [
+        {
+            "mealType": "Breakfast",
+            "fastingSugarLevel": 90,
+            "preMealSugarLevel": 110,
+            "postMealSugarLevel": 140,
+            "date": "2025-03-29T08:00:00.000Z"
+        }
+    ],
+    "dietaryPreference": "Vegetarian",
+    "dailyCaloricIntake": 2000,
+    "foodAllergies": ["Peanuts"],
+    "mealTypePreference": "Balanced",
+    "activityLevel": "Moderate",
+    "weight": 75,
+    "height": 175
+}
+
+
+###
+POST http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+    "userId": "USR12345",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "age": 35,
+    "gender": "Male",
+    "diabetesType": "Type 2",
+    "sugarLevels": [
+        {
+            "mealType": "Breakfast",
+            "fastingSugarLevel": 90,
+            "preMealSugarLevel": 110,
+            "postMealSugarLevel": 140,
+            "date": "2025-03-28T08:00:00Z"
+        }
+    ],
+    "dietaryPreference": "Vegetarian",
+    "dailyCaloricIntake": 2000,
+    "foodAllergies": ["Peanuts"],
+    "mealTypePreference": "Balanced",
+    "activityLevel": "Moderate",
+    "weight": 75,
+    "height": 175
+}
+
+#### User login
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+    "email":"nsrisanjay03@gmail.com",
+    "password":"123"
+}
+
+###
+POST http://localhost:5000/users/log-sugar-levels
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTRlY2IyMWI5OWUxZTMzMjczMmEzZiIsImlhdCI6MTc0MzA4Mjg5MSwiZXhwIjoxNzQzMDg2NDkxfQ.pwTMuQhHQRY086Xm2XFMQ7u1cB8jSg5DY_mUCZO-YAM
+
+{
+    "userId": "00527c00-31a6-4469-af62-2fad0d71cda8",
+    "mealType": "Lunch",
+    "fastingSugarLevel":"123",
+    "preMealSugarLevel":"123",
+    "postMealSugarLevel":"123",
+    "date":"2025-03-27T06:14:10.149+00:00"
+}
+
+###
+POST http://localhost:5000/food/log
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTdkZjFhNDlmNTBlODkzYzdlZWMzMyIsImlhdCI6MTc0MzM1MDcxMSwiZXhwIjoxNzQzMzU0MzExfQ.J2gQE-HBZVQG_yVr6TEjcXnqHgQyjqXlKFMQ78P374A
+
+{
+    "userId": "67e7df1a49f50e893c7eec33",
+    "mealType": "Lunch",
+    "foodItems": [
+        { "name": "Pizza", "quantity": 5 },
+        { "name": "Chicken", "quantity": 1 },
+        { "name": "Orange Juice", "quantity": 1 }
+    ],
+    "inputMethod": "text"
+}
+
+####
+POST http://localhost:5000/food/log/voice
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTdkZjFhNDlmNTBlODkzYzdlZWMzMyIsImlhdCI6MTc0MzI3MjEyNiwiZXhwIjoxNzQzMjc1NzI2fQ.OuXlOgDUMD8takdMeHhu0SVNr-y1L5AlDuS5dsg9I1w
+
+
+{
+    "userId": "67e7df1a49f50e893c7eec33",
+    "mealType": "Lunch",
+    "voiceText": "5 boiled eggs and a glass of orange juice"
+}
+
+
+###
+PUT http://localhost:5000/food/log/67ea5cb93a0dbe1c205380cf
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTdkZjFhNDlmNTBlODkzYzdlZWMzMyIsImlhdCI6MTc0MzQxODM1NywiZXhwIjoxNzQzNDIxOTU3fQ.R2HzdoxcJ8QNdaq8KxK0-OsLaDe0zGp_dRkXon1oMpA
+
+{
+  "mealType": "Lunch",
+  "foodItems": [
+    { "name": "Pasta", "quantity": 2 },
+    { "name": "Salad", "quantity": 1 }
+  ],
+  "inputMethod": "text"
+}
