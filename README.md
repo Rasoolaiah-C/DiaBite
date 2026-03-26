@@ -71,7 +71,7 @@ DiaBite/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/HemanthThummepalli-Git/DiaBite.git
+git clone https://github.com/Rasoolaiah-C/DiaBite.git
 cd DiaBite
 ```
 
